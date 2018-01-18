@@ -20,12 +20,13 @@ class Media:
         """ 检查传入的属性 """
         error = []
         print("上行参数检查：")
-        self.title = str(self.name)
+        self.title = str(self.name.strip())
 
         # 判断url格式是否正确
-        if not re.match(r'^https?:/{2}\w.+$', str(self.poster_image_url)):
+        if not re.match(r'^https?:/{2}\w.+$',
+                        str(self.poster_image_url.strip())):
             error.append("海报链接格式错误 {url}".format(url=self.poster_image_url))
-        if not re.match(r'^https?:/{2}\w.+$', str(self.trailer_url)):
+        if not re.match(r'^https?:/{2}\w.+$', str(self.trailer_url.strip())):
             error.append("视频链接格式错误 {url}".format(url=self.trailer_url))
 
         # 判断star值类型是否正确
