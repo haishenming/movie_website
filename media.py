@@ -8,14 +8,13 @@ import re
 class Media:
 
     def __init__(self, name, post_url, media_url, stars):
-        self.name = name                      # 名   称  str
-        self.poster_image_url = post_url      # 海报链接  url
+        self.name = name                        # 名   称  str
+        self.poster_image_url = post_url        # 海报链接  url
         self.trailer_url = media_url            # 视频链接  url
         self.stars = stars                      # 我的评分  float
         check_ret = self._check_attrs()
         if not check_ret:
             raise ValueError
-
 
     def _check_attrs(self):
         """ 检查传入的属性 """
