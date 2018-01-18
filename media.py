@@ -14,7 +14,7 @@ class Media:
         self.stars = stars                      # 我的评分  float
         check_ret = self._check_attrs()
         if not check_ret:
-            raise SystemExit
+            raise ValueError
 
     def _check_attrs(self):
         """ 检查传入的属性 """
