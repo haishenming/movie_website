@@ -14,7 +14,7 @@ class Media:
         self.stars = stars                      # 我的评分  float
         check_ret = self._check_attrs()
         if not check_ret:
-            exit()
+            raise SystemExit
 
     def _check_attrs(self):
         """ 检查传入的属性 """
@@ -35,11 +35,11 @@ class Media:
             error.append("star类型错误： {err}".format(err=e))
 
         if error:
-            print("OK")
-            return True
-        else:
             print(error)
             return False
+        else:
+            print("ok")
+            return True
 
 
 
