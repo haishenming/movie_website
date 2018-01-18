@@ -16,6 +16,7 @@ class Media:
         if not check_ret:
             raise ValueError
 
+
     def _check_attrs(self):
         """ 检查传入的属性 """
         error = []
